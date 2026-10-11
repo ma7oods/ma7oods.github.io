@@ -1,0 +1,183 @@
+<!doctype html>
+<!--
+  KeepSpot public site (static, no build step, no tracking).
+
+  HOSTING (GitHub Pages user site, so app-ads.txt is at the domain root):
+  1. Create a public GitHub repository named exactly <username>.github.io
+     (replace <username> with your GitHub user name).
+  2. Upload the contents of this site/ folder to the ROOT of that repository:
+     index.html, privacy.html, app-ads.txt and .nojekyll.
+  3. In the repository: Settings > Pages > Build and deployment >
+     Source "Deploy from a branch", branch main, folder / (root). Save.
+  4. After a few minutes these URLs must work over HTTPS:
+       https://<username>.github.io/               (Play "Website")
+       https://<username>.github.io/privacy.html   (Play "Privacy policy")
+       https://<username>.github.io/app-ads.txt    (AdMob crawler)
+  A project site (https://<username>.github.io/<repo>/) does NOT work for
+  app-ads.txt, because the file must be at the domain root.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KeepSpot</title>
+    <meta
+      name="description"
+      content="KeepSpot is a simple Android app for remembering where household items are stored."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --text: #24362b;
+        --heading: #214b37;
+        --muted: #55665b;
+        --bg: #fbfcf9;
+        --card: #eef4ef;
+        --accent: #2f6b4d;
+        --on-accent: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text: #dfe9e2;
+          --heading: #9fd4b4;
+          --muted: #a9b8ae;
+          --bg: #121a15;
+          --card: #1b261f;
+          --accent: #9fd4b4;
+          --on-accent: #10261a;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font:
+          17px/1.6 system-ui,
+          sans-serif;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 48px 16px;
+        color: var(--text);
+        background: var(--bg);
+      }
+      h1,
+      h2 {
+        color: var(--heading);
+        line-height: 1.2;
+      }
+      h1 {
+        font-size: 2.4rem;
+        margin: 0 0 0.2em;
+      }
+      .lead {
+        font-size: 1.2rem;
+        color: var(--muted);
+        margin-top: 0;
+      }
+      .button {
+        display: inline-block;
+        margin: 12px 0 8px;
+        padding: 12px 20px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--on-accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .note {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        padding: 0;
+        list-style: none;
+      }
+      .grid li {
+        background: var(--card);
+        border-radius: 14px;
+        padding: 14px 16px;
+      }
+      .grid strong {
+        display: block;
+        color: var(--heading);
+      }
+      a {
+        color: var(--heading);
+      }
+      footer {
+        margin-top: 48px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>KeepSpot</h1>
+      <p class="lead">
+        Remember where you put things. A simple map of your home, kept on your
+        phone.
+      </p>
+      <!-- PLAY_LISTING_URL: works once the app is published on Google Play. -->
+      <a
+        class="button"
+        href="https://play.google.com/store/apps/details?id=com.keepspot.app"
+        >View on Google Play</a
+      >
+      <p class="note">Coming soon to Google Play for Android.</p>
+    </header>
+
+    <main>
+      <h2>Find your things quickly</h2>
+      <p>
+        Create places such as rooms, drawers, shelves, and boxes, then add the
+        things you keep in each one. When you need something, search by name,
+        note, or place.
+      </p>
+      <ul class="grid">
+        <li>
+          <strong>Places and things</strong>Organize every room, drawer, and
+          storage box.
+        </li>
+        <li>
+          <strong>Search and filter</strong>Search names, notes, and places, or
+          filter by place.
+        </li>
+        <li>
+          <strong>Stays on your device</strong>No account. Core features work
+          offline.
+        </li>
+        <li>
+          <strong>Backups you control</strong>Export a backup file and restore
+          it when you need it.
+        </li>
+        <li>
+          <strong>Six languages</strong>English, Arabic, Spanish, French,
+          German, and Portuguese.
+        </li>
+        <li>
+          <strong>Free with one banner ad</strong>Ads are served by Google
+          AdMob, with consent where required.
+        </li>
+      </ul>
+
+      <h2>Privacy</h2>
+      <p>
+        Your places, things, and notes stay on your device. The only feature
+        that uses the internet is the banner ad. Read the
+        <a href="privacy.html">KeepSpot Privacy Policy</a> for details,
+        including how to change your ad privacy choices.
+      </p>
+    </main>
+
+    <footer>
+      <p>
+        <a href="privacy.html">Privacy Policy</a> ·
+        <a href="privacy.html#contact">Contact</a>
+      </p>
+    </footer>
+  </body>
+</html>

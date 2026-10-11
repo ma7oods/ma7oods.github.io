@@ -1,0 +1,170 @@
+<!doctype html>
+<!--
+  Tester hub: one link to share with testers. Add a new <li> under "Apps to
+  test" for every app or game that starts a closed test, using its link
+  https://play.google.com/apps/testing/<package.name>
+-->
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Balbol Testers</title>
+    <meta
+      name="description"
+      content="Help test Balbol's Android apps and games before they launch on Google Play."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --text: #24362b;
+        --heading: #214b37;
+        --muted: #55665b;
+        --bg: #fbfcf9;
+        --card: #eef4ef;
+        --accent: #2f6b4d;
+        --on-accent: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text: #dfe9e2;
+          --heading: #9fd4b4;
+          --muted: #a9b8ae;
+          --bg: #121a15;
+          --card: #1b261f;
+          --accent: #9fd4b4;
+          --on-accent: #10261a;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font:
+          17px/1.6 system-ui,
+          sans-serif;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 40px 16px;
+        color: var(--text);
+        background: var(--bg);
+      }
+      h1,
+      h2 {
+        color: var(--heading);
+        line-height: 1.25;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.2em;
+      }
+      .lead,
+      .en {
+        color: var(--muted);
+      }
+      .en {
+        direction: ltr;
+        text-align: left;
+        font-size: 0.95rem;
+      }
+      .button {
+        display: inline-block;
+        margin: 8px 0;
+        padding: 12px 20px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--on-accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      ol.steps li {
+        margin-bottom: 10px;
+      }
+      ul.apps {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+      }
+      ul.apps li {
+        background: var(--card);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      ul.apps strong {
+        display: block;
+        color: var(--heading);
+        font-size: 1.1rem;
+      }
+      a {
+        color: var(--heading);
+      }
+      footer {
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ساعدنا في تجربة تطبيقاتنا</h1>
+    <p class="lead">
+      Google Play تطلب أن يجرّب 12 شخصاً كل تطبيق جديد لمدة 14 يوماً قبل نشره
+      للجميع. تجربتك مجانية وتساعد مطوّراً مستقلاً من العراق.
+    </p>
+    <p class="en">
+      Help test Balbol's Android apps and games. Google Play requires 12 testers
+      for 14 days before a new app can launch. It is free and takes a minute.
+    </p>
+
+    <h2>الخطوات</h2>
+    <ol class="steps">
+      <li>
+        انضم إلى مجموعة المختبرين مرة واحدة فقط، بنفس حساب Gmail الموجود على
+        هاتفك.<br />
+        <a class="button" href="https://groups.google.com/g/balbol-testers"
+          >الانضمام إلى Balbol Testers</a
+        >
+      </li>
+      <li>
+        افتح رابط التطبيق من القائمة بالأسفل على هاتفك، واضغط
+        <b>Become a tester</b>، ثم ثبّت التطبيق من Google Play.
+      </li>
+      <li>
+        أبقِ التطبيق مثبّتاً لمدة 14 يوماً وافتحه بين حين وآخر. ملاحظاتك تهمّنا.
+      </li>
+    </ol>
+    <p class="en">
+      1) Join the Balbol Testers group once with the Gmail account on your phone.
+      2) Open each app link below on your phone, tap "Become a tester", then
+      install it from Google Play. 3) Keep it installed for 14 days and open it
+      now and then.
+    </p>
+
+    <h2>التطبيقات المتاحة للتجربة</h2>
+    <ul class="apps">
+      <li>
+        <strong>KeepSpot: Find Your Things</strong>
+        تطبيق يتذكّر أين وضعت أغراضك في البيت.
+        <div class="en">Remember where you put things at home.</div>
+        <a class="button" href="https://play.google.com/apps/testing/com.keepspot.app"
+          >جرّب KeepSpot</a
+        >
+      </li>
+      <li>
+        <strong>Noodle Pups: Arrow Escape</strong>
+        لعبة ألغاز خفيفة وممتعة.
+        <div class="en">A casual puzzle game.</div>
+        <a
+          class="button"
+          href="https://play.google.com/apps/testing/com.noodlepups.arrowescape"
+          >جرّب Noodle Pups</a
+        >
+      </li>
+    </ul>
+
+    <footer>
+      Balbol · <a href="mailto:Ma7oodMm@gmail.com">Ma7oodMm@gmail.com</a> ·
+      <a href="privacy.html">KeepSpot privacy policy</a>
+    </footer>
+  </body>
+</html>
