@@ -121,6 +121,18 @@
         color: var(--heading);
         font-size: 1.25rem;
       }
+      .head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 8px;
+      }
+      .head img {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        flex: none;
+      }
       a {
         color: var(--heading);
       }
@@ -218,8 +230,14 @@
           ...APPS.map((a) => {
             const li = document.createElement("li");
             li.className = "card";
+            const head = document.createElement("div");
+            head.className = "head";
+            const icon = document.createElement("img");
+            icon.src = "icons/" + a.pkg + ".png";
+            icon.alt = "";
             const name = document.createElement("strong");
             name.textContent = a.name;
+            head.append(icon, name);
             const join = document.createElement("a");
             join.className = "button";
             join.href = "https://play.google.com/apps/testing/" + a.pkg;
@@ -228,7 +246,7 @@
             store.className = "button play";
             store.href = "https://play.google.com/store/apps/details?id=" + a.pkg;
             store.textContent = a.game ? t.gameBtn : t.app;
-            li.append(name, a[lang], join, store);
+            li.append(head, a[lang], join, store);
             return li;
           })
         );
