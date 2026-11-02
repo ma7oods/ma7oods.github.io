@@ -1,17 +1,19 @@
 <!doctype html>
 <!--
-  Tester hub: one link to share with testers. Add a new <li> under "Apps to
-  test" for every app or game that starts a closed test, using its link
-  https://play.google.com/apps/testing/<package.name>
+  Tester hub: one link to share with testers. The page shows Arabic or English
+  from the visitor's phone language (Arabic -> ar, everything else -> en).
+  For every new closed test add one entry to APPS below:
+  join  = https://play.google.com/apps/testing/<package.name>
+  store = https://play.google.com/store/apps/details?id=<package.name>
 -->
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Balbol Testers</title>
+    <title>Early Access Testing</title>
     <meta
       name="description"
-      content="Help test Balbol's Android apps and games before they launch on Google Play."
+      content="Try our new Android apps and games early on Google Play."
     />
     <style>
       :root {
@@ -23,6 +25,8 @@
         --card: #eef4ef;
         --accent: #2f6b4d;
         --on-accent: #ffffff;
+        --play: #1a73e8;
+        --on-play: #ffffff;
       }
       @media (prefers-color-scheme: dark) {
         :root {
@@ -33,6 +37,8 @@
           --card: #1b261f;
           --accent: #9fd4b4;
           --on-accent: #10261a;
+          --play: #8ab4f8;
+          --on-play: #0b1d3a;
         }
       }
       * {
@@ -40,11 +46,11 @@
       }
       body {
         font:
-          17px/1.6 system-ui,
+          18px/1.6 system-ui,
           sans-serif;
-        max-width: 760px;
+        max-width: 640px;
         margin: 0 auto;
-        padding: 40px 16px;
+        padding: 24px 16px 32px;
         color: var(--text);
         background: var(--bg);
       }
@@ -55,45 +61,65 @@
       }
       h1 {
         font-size: 2rem;
-        margin: 0 0 0.2em;
+        margin: 0 0 0.3em;
       }
       .lead,
-      .en {
+      .hint,
+      footer {
         color: var(--muted);
       }
-      .en {
-        direction: ltr;
-        text-align: left;
+      .hint {
+        font-size: 0.95rem;
+        margin: 6px 0 0;
+      }
+      .lang {
+        text-align: end;
         font-size: 0.95rem;
       }
-      .button {
-        display: inline-block;
-        margin: 8px 0;
-        padding: 12px 20px;
-        border-radius: 999px;
+      .card {
+        background: var(--card);
+        border-radius: 18px;
+        padding: 18px;
+        margin: 16px 0;
+      }
+      .num {
+        display: inline-grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
         background: var(--accent);
         color: var(--on-accent);
-        font-weight: 600;
+        font-weight: 700;
+        margin-inline-end: 8px;
+      }
+      .button {
+        display: block;
+        width: 100%;
+        min-height: 56px;
+        margin: 10px 0 0;
+        padding: 14px 18px;
+        border-radius: 14px;
+        background: var(--accent);
+        color: var(--on-accent);
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-align: center;
         text-decoration: none;
       }
-      ol.steps li {
-        margin-bottom: 10px;
+      .button.play {
+        background: var(--play);
+        color: var(--on-play);
       }
       ul.apps {
         list-style: none;
         padding: 0;
-        display: grid;
-        gap: 12px;
-      }
-      ul.apps li {
-        background: var(--card);
-        border-radius: 14px;
-        padding: 16px;
+        margin: 0;
       }
       ul.apps strong {
         display: block;
         color: var(--heading);
-        font-size: 1.1rem;
+        font-size: 1.25rem;
       }
       a {
         color: var(--heading);
@@ -101,92 +127,119 @@
       footer {
         margin-top: 40px;
         font-size: 0.9rem;
-        color: var(--muted);
       }
     </style>
   </head>
   <body>
-    <h1>ساعدنا في تجربة تطبيقاتنا</h1>
-    <p class="lead">
-      Google Play تطلب أن يجرّب 12 شخصاً كل تطبيق جديد لمدة 14 يوماً قبل نشره
-      للجميع. تجربتك مجانية وتساعد مطوّراً مستقلاً من العراق.
-    </p>
-    <p class="en">
-      Help test Balbol's Android apps and games. Google Play requires 12 testers
-      for 14 days before a new app can launch. It is free and takes a minute.
-    </p>
+    <p class="lang"><a href="#" id="switch"></a></p>
+    <h1 data-t="title"></h1>
+    <p class="lead" data-t="lead"></p>
 
-    <h2>الخطوات</h2>
-    <ol class="steps">
-      <li>
-        انضم إلى مجموعة المختبرين مرة واحدة فقط، بنفس حساب Gmail الموجود على
-        هاتفك.<br />
-        <a class="button" href="https://groups.google.com/g/balbol-testers"
-          >الانضمام إلى Balbol Testers</a
-        >
-      </li>
-      <li>
-        افتح رابط التطبيق من القائمة بالأسفل على هاتفك، واضغط
-        <b>Become a tester</b>، ثم ثبّت التطبيق من Google Play.
-      </li>
-      <li>
-        أبقِ التطبيق مثبّتاً لمدة 14 يوماً وافتحه بين حين وآخر. ملاحظاتك تهمّنا.
-      </li>
-    </ol>
-    <p class="en">
-      1) Join the Balbol Testers group once with the Gmail account on your phone.
-      2) Open each app link below on your phone, tap "Become a tester", then
-      install it from Google Play. 3) Keep it installed for 14 days and open it
-      now and then.
-    </p>
+    <div class="card">
+      <span class="num">1</span><b data-t="s1"></b>
+      <p class="hint" data-t="s1hint"></p>
+      <a class="button" href="https://groups.google.com/g/balbol-testers" data-t="join"></a>
+    </div>
 
-    <h2>التطبيقات المتاحة للتجربة</h2>
-    <ul class="apps">
-      <li>
-        <strong>KeepSpot: Find Your Things</strong>
-        تطبيق يتذكّر أين وضعت أغراضك في البيت.
-        <div class="en">Remember where you put things at home.</div>
-        <a class="button" href="https://play.google.com/apps/testing/com.keepspot.app"
-          >جرّب KeepSpot</a
-        >
-      </li>
-      <li>
-        <strong>Noodle Pups: Arrow Escape</strong>
-        لعبة ألغاز خفيفة وممتعة.
-        <div class="en">A casual puzzle game.</div>
-        <a
-          class="button"
-          href="https://play.google.com/apps/testing/com.noodlepups.arrowescape"
-          >جرّب Noodle Pups</a
-        >
-      </li>
-      <li>
-        <strong>Merge Melody: Relaxing Puzzle</strong>
-        لعبة دمج هادئة، وكل دمج يعزف لحناً.
-        <div class="en">A calm merge puzzle where every merge plays a melody.</div>
-        <a
-          class="button"
-          href="https://play.google.com/apps/testing/com.mergemelody.game"
-          >جرّب Merge Melody</a
-        >
-      </li>
-      <li>
-        <strong>QuickKit: PDF, Image &amp; QR</strong>
-        أدوات PDF والصور وQR وExcel، وكل الملفات تُعالَج على جهازك.
-        <div class="en">PDF, image, QR and Excel tools; files are processed on your device.</div>
-        <a
-          class="button"
-          href="https://play.google.com/apps/testing/com.balbol.quickkit"
-          >جرّب QuickKit</a
-        >
-      </li>
-    </ul>
+    <h2 data-t="s2"></h2>
+    <p class="hint" data-t="s2hint"></p>
+    <ul class="apps" id="apps"></ul>
+    <p class="hint" data-t="wait"></p>
 
     <footer>
-      Balbol · <a href="mailto:Ma7oodMm@gmail.com">Ma7oodMm@gmail.com</a> ·
-      <a href="privacy.html">KeepSpot privacy policy</a> ·
-      <a href="merge-melody/privacy.html">Merge Melody privacy policy</a> ·
-      <a href="quickkit/privacy.html">QuickKit privacy policy</a>
+      <a href="mailto:Ma7oodMm@gmail.com">Ma7oodMm@gmail.com</a> ·
+      <a href="privacy.html">KeepSpot privacy</a> ·
+      <a href="merge-melody/privacy.html">Merge Melody privacy</a> ·
+      <a href="quickkit/privacy.html">QuickKit privacy</a>
     </footer>
+
+    <noscript>
+      <p>
+        Join: https://groups.google.com/g/balbol-testers — then open
+        https://play.google.com/apps/testing/&lt;app&gt; on your phone.
+      </p>
+    </noscript>
+
+    <script>
+      const APPS = [
+        { name: "KeepSpot: Find Your Things", pkg: "com.keepspot.app", game: false,
+          en: "Remembers where you put things at home.",
+          ar: "تطبيق يتذكّر أين وضعت أغراضك في البيت." },
+        { name: "Noodle Pups: Arrow Escape", pkg: "com.noodlepups.arrowescape", game: true,
+          en: "A light, fun puzzle game.",
+          ar: "لعبة ألغاز خفيفة وممتعة." },
+        { name: "Merge Melody: Relaxing Puzzle", pkg: "com.mergemelody.game", game: true,
+          en: "A calm merge puzzle where every merge plays a melody.",
+          ar: "لعبة دمج هادئة، وكل دمج يعزف لحناً." },
+        { name: "QuickKit: PDF, Image & QR", pkg: "com.balbol.quickkit", game: false,
+          en: "PDF, image, QR and Excel tools. Files stay on your device.",
+          ar: "أدوات PDF والصور وQR وExcel، وكل الملفات تُعالَج على جهازك." },
+      ];
+      const T = {
+        en: {
+          title: "Try our apps before everyone else",
+          lead: "Google Play asks for 12 testers for 14 days before a new app can launch. It is free and takes one minute.",
+          s1: "Once only: join the testers group",
+          s1hint: "Open this page on your phone and use the same Google account you use on Google Play.",
+          join: "Join the testers group",
+          s2: "2. Pick an app and tap both buttons in order",
+          s2hint: "Green signs you up as a tester. Blue opens the install page. Keep it for 14 days and open it now and then.",
+          wait: "If Google Play says the app is not available, wait a few minutes after signing up and tap the blue button again.",
+          tester: "① Sign me up as a tester",
+          app: "② Install the app",
+          gameBtn: "② Install the game",
+          other: "العربية",
+        },
+        ar: {
+          title: "جرّب تطبيقاتنا قبل الجميع",
+          lead: "تطلب Google Play أن يجرّب 12 شخصاً كل تطبيق جديد لمدة 14 يوماً قبل نشره للجميع. التجربة مجانية وتأخذ دقيقة واحدة.",
+          s1: "مرة واحدة فقط: انضم إلى مجموعة المختبرين",
+          s1hint: "افتح هذه الصفحة من هاتفك، واستخدم نفس حساب Google الموجود على Google Play.",
+          join: "انضم إلى مجموعة المختبرين",
+          s2: "2. اختر التطبيق واضغط الزرّين بالترتيب",
+          s2hint: "الزر الأخضر يسجّلك كمختبر، والزر الأزرق يفتح صفحة التحميل. أبقِ التطبيق 14 يوماً وافتحه بين حين وآخر.",
+          wait: "إذا قال Google Play أن التطبيق غير متوفر، انتظر بضع دقائق بعد التسجيل ثم اضغط الزر الأزرق مرة ثانية.",
+          tester: "① سجّلني كمختبر",
+          app: "② حمّل التطبيق",
+          gameBtn: "② حمّل اللعبة",
+          other: "English",
+        },
+      };
+
+      function render(lang) {
+        const t = T[lang];
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        document.title = t.title;
+        document.querySelectorAll("[data-t]").forEach((el) => (el.textContent = t[el.dataset.t]));
+        document.getElementById("switch").textContent = t.other;
+        const list = document.getElementById("apps");
+        list.replaceChildren(
+          ...APPS.map((a) => {
+            const li = document.createElement("li");
+            li.className = "card";
+            const name = document.createElement("strong");
+            name.textContent = a.name;
+            const join = document.createElement("a");
+            join.className = "button";
+            join.href = "https://play.google.com/apps/testing/" + a.pkg;
+            join.textContent = t.tester;
+            const store = document.createElement("a");
+            store.className = "button play";
+            store.href = "https://play.google.com/store/apps/details?id=" + a.pkg;
+            store.textContent = a.game ? t.gameBtn : t.app;
+            li.append(name, a[lang], join, store);
+            return li;
+          })
+        );
+      }
+
+      let lang = /^ar\b/i.test(navigator.language || "") ? "ar" : "en";
+      document.getElementById("switch").addEventListener("click", (e) => {
+        e.preventDefault();
+        render((lang = lang === "ar" ? "en" : "ar"));
+      });
+      render(lang);
+    </script>
   </body>
 </html>
