@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light dark;
+  --text: #24362b;
+  --heading: #214b37;
+  --muted: #55665b;
+  --bg: #fbfcf9;
+  --card: #eef4ef;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #dfe9e2;
+    --heading: #9fd4b4;
+    --muted: #a9b8ae;
+    --bg: #121a15;
+    --card: #1b261f;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font:
+    17px/1.6 system-ui,
+    sans-serif;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  color: var(--text);
+  background: var(--bg);
+}
+h1,
+h2 {
+  color: var(--heading);
+  line-height: 1.2;
+}
+h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.2em;
+}
+h2 {
+  margin-top: 1.8em;
+}
+.lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-top: 0;
+}
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+.grid li {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.grid strong {
+  display: block;
+  color: var(--heading);
+}
+a {
+  color: var(--heading);
+}
+footer {
+  margin-top: 48px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
